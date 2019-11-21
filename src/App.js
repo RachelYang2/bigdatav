@@ -36,8 +36,7 @@ class App extends React.Component{
         self.setState({
           houses: response.data,
           host: user
-        })
-        
+        })        
       })
       .catch(function (error) {
         console.log(error);
@@ -72,7 +71,7 @@ class App extends React.Component{
         </header>}
         <div className="content">
           {
-            host &&
+            houses &&
             (
               <div>
                 <h2 style={{paddingTop: "5vh"}}>
