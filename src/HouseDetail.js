@@ -54,7 +54,7 @@ class HouseDetail extends React.Component {
                     </div>
                     <div className="summary-info">
                         <Row style={{ padding: "2vw" }}>
-                            <Col span={12}><img src={house.picture_url} style={{ width: "95%", height: "95%" }} alt="house"/></Col>
+                            <Col span={12}><img src={house.picture_url} style={{ width: "95%", height: "95%", maxHeight: "60vh", maxWidth: "50vw" }} alt="house"/></Col>
                             <Col span={12}>
                                 <div className="info">
                                     <p className="location">{house.property_type}&nbsp;<Icon type="environment" />&nbsp;{house.neighbourhood_cleansed}</p>

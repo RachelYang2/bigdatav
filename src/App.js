@@ -66,9 +66,9 @@ class App extends React.Component{
       });
   }
 
-  handleConfirm = e => {
-    localStorage.setItem("airbnb_host", e.target.value)
-    this.getHouses(e.target.value)
+  handleConfirm = (host) => {
+    localStorage.setItem("airbnb_host", host)
+    this.getHouses(host)
   }
 
   logout = () => {
@@ -90,11 +90,11 @@ class App extends React.Component{
           <p>I am a host. </p>
           <p>My ID is&nbsp;</p>
           <Input size="large" placeholder="Your host ID" className="input"
-          onPressEnter={(e) => this.handleConfirm(e)} />
+          onPressEnter={(e) => this.handleConfirm(e.target.value)} />
           <p style={{marginBottom: 0, marginTop: "1em"}}>Here are some possible choices</p>
           <p>
             { 
-              hotHosts && hotHosts.length > 0 && hotHosts.map(host => (<Button onClick={() => this.getHouses(host)}>{host}</Button>))
+              hotHosts && hotHosts.length > 0 && hotHosts.map(host => (<Button onClick={() => this.handleConfirm(host)} key={host}>{host}</Button>))
             }
           </p>
         </header>
